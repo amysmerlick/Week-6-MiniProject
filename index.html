@@ -2,29 +2,62 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,400i,700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
-  <link rel="stylesheet" href="./assets/css/style.css" />
-  <title>Git it Done</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>|Weather Dashboard</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+
 </head>
 
 <body>
-    <header class="hero">
-        <h1 class="app-title"><i class="fab fa-github"></i> Git it Done!</h1>
-        <p>Search for a GitHub user or click on a language to see a list of repositories and how many open issues they have!
-        </p>
-      </header>
-  </header>
-
-
-  <main>
-
-  </main>
-  
-  <script src="./assets/js/homepage.js"></script>
+  <div id="weatherContainer" class="container mb-3 mt-3">
+    <div id="weather" class="row">
+      <div id="title" class="col-12 title text-center font-weight-bold">
+        <h1>Weather Dashboard</h1>
+      </div>
+    </div>
+    <div class="row">
+      <div id="zipCodeContainer" class="col-4 zipCode text-left font-weight-bold">
+        <p>Search for a City:</p>
+        <div class="input-group">
+          <input id="zipCode" type="search" class="form-control rounded " placeholder="Search" aria-label="Search"
+            aria-describedby="search-addon" />
+          <button id="searchBtn" type="button" class="SearchBtn btn-outline-primary">search</button>
+        </div>
+        <div id="locationHistory" class="list-group">
+        </div>
+      </div>
+        <div class="col-8 h-50 pr-0 pt-3">
+          <div id="weatherData">
+            <div id="currentWeather" class="border-light">
+              <div class="card">
+                <div class="card-body">
+                  <h5 id="cityDate" class="card-title"></h5>
+                  <p class="card-text"><span>Temperature: </span><span id="currentTemp"></span></p>
+                  <p class="card-text"><span>Humidity: </span><span id="currentHumidity"></span></p>
+                  <p class="card-text"><span>Wind Speed: </span><span id="currentWindSpeed"></span></p>
+                  <p class="card-text"><span>UV Index: </span><span id="currentUVIndex" class="d-inline-block"></span></p>
+                </div>
+              </div>
+            </div>
+            <div id="5DayWeather">
+              <h3>5-Day Forecast:</h3>
+              <div>
+                <div id="fiveDay" class="d-flex justify-content-between ">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      
+    </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="./assets/js/script.js"></script>
 </body>
 
 </html>
